@@ -1,0 +1,178 @@
+/* ==========================================================
+   GOALRACE ENGINE
+   style.css
+   Version: 0.1.0
+   Phase 1 - Foundation
+========================================================== */
+
+/* ---------- CSS RESET ---------- */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #071726;
+    color: #ffffff;
+    overflow: hidden;
+}
+
+/* ---------- ROOT VARIABLES ---------- */
+
+:root {
+
+    --background: #071726;
+
+    --panel: #10263d;
+
+    --panel-dark: #0b1b2b;
+
+    --primary: #2196f3;
+
+    --success: #3ddc84;
+
+    --danger: #ff4f4f;
+
+    --gold: #ffd54f;
+
+    --text: #ffffff;
+
+    --muted: #b7c3d4;
+
+    --border: rgba(255,255,255,.08);
+
+    --radius: 18px;
+
+}
+
+/* ---------- MAIN APP ---------- */
+
+#broadcast{
+
+    width:100vw;
+
+    height:100vh;
+
+    display:grid;
+
+    grid-template-rows:
+        90px
+        1fr
+        300px;
+
+    gap:14px;
+
+    padding:14px;
+
+}
+
+/* ---------- GLOBAL PANELS ---------- */
+
+header,
+main,
+footer{
+
+    background:var(--panel);
+
+    border-radius:var(--radius);
+
+    border:1px solid var(--border);
+
+    overflow:hidden;
+
+}
+
+/* ---------- HEADER ---------- */
+
+header{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:0 22px;
+
+}
+
+/* ---------- CONNECTION ---------- */
+
+#serverStatus{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    font-weight:bold;
+
+}
+
+#connectionDot{
+
+    width:14px;
+
+    height:14px;
+
+    border-radius:50%;
+
+    background:#ff4f4f;
+
+    box-shadow:0 0 12px #ff4f4f;
+
+    animation:pulse 1.5s infinite;
+
+}
+
+@keyframes pulse{
+
+    0%{
+        transform:scale(.9);
+    }
+
+    50%{
+        transform:scale(1.2);
+    }
+
+    100%{
+        transform:scale(.9);
+    }
+
+}
+
+/* ---------- TIMER ---------- */
+
+#matchTimer{
+
+    font-size:34px;
+
+    font-weight:700;
+
+    color:var(--gold);
+
+}
+
+/* ---------- LIKES ---------- */
+
+#totalLikes{
+
+    font-size:28px;
+
+    font-weight:700;
+
+    color:#ff6ea9;
+
+}

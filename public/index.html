@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>GOALRACE ENGINE</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div id="broadcast">
+
+    <header>
+
+        <div id="matchTimer">
+            00:00
+        </div>
+
+        <div id="serverStatus">
+
+            <span id="connectionDot"></span>
+
+            <span id="connectionText">
+                Connecting...
+            </span>
+
+        </div>
+
+        <div id="totalLikes">
+
+            ❤️ 0
+
+        </div>
+
+    </header>
+
+    <main>
+
+        <section id="stadiumPlaceholder">
+
+            <div class="placeholderText">
+
+                3D STADIUM
+                <br>
+                (Coming Phase 4)
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+
+        <div id="countries">
+
+            <div>🇭🇳 Honduras <span>0</span></div>
+            <div>🇲🇽 Mexico <span>0</span></div>
+            <div>🇬🇹 Guatemala <span>0</span></div>
+            <div>🇸🇻 El Salvador <span>0</span></div>
+            <div>🇳🇮 Nicaragua <span>0</span></div>
+            <div>🇨🇷 Costa Rica <span>0</span></div>
+            <div>🇵🇦 Panama <span>0</span></div>
+            <div>🇺🇸 USA <span>0</span></div>
+
+        </div>
+
+        <div id="giftBar">
+
+            Gift Rewards
+
+        </div>
+
+    </footer>
+
+</div>
+
+<script src="js/websocket.js"></script>
+<script src="game.js"></script>
+
+</body>
+
+</html>
