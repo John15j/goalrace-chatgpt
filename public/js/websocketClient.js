@@ -105,3 +105,12 @@ Shared WebSocket Client
     };
 
 })();
+GoalRaceSocket.send = function(data){
+
+    if(socket && socket.readyState === WebSocket.OPEN){
+
+        socket.send(JSON.stringify(data));
+
+    }
+
+};

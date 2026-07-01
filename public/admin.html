@@ -1,65 +1,95 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
 
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-
-<title>GOALRACE ADMIN</title>
+<title>GOALRACE ENGINE ADMIN</title>
 
 <link rel="stylesheet" href="style.css">
 
 </head>
 
-<body>
+<body class="admin-page">
 
-<div id="broadcast">
+<div class="admin-container">
 
-<header>
+<header class="admin-header">
 
-<h2>GOALRACE ENGINE ADMIN</h2>
+    <div>
+        <h1>GOALRACE ENGINE</h1>
+        <p>Administrator Dashboard</p>
+    </div>
 
-<div id="serverStatus">
+    <div class="connection-box">
 
-<span id="connectionDot"></span>
+        <span id="connectionDot"></span>
 
-<span id="connectionText">
+        <span id="connectionText">
+            Connecting...
+        </span>
 
-Connecting...
-
-</span>
-
-</div>
+    </div>
 
 </header>
 
-<main>
+<div class="admin-grid">
 
-<div class="placeholderText">
+    <section class="card">
 
-ADMIN PANEL
+        <h2>Server Status</h2>
 
-<br><br>
+        <p>Running</p>
 
-Phase 2 will place all controls here.
+    </section>
+
+    <section class="card">
+
+        <h2>Connected Clients</h2>
+
+        <h1 id="clientCount">0</h1>
+
+    </section>
+
+    <section class="card">
+
+        <h2>Match Status</h2>
+
+        <p>Waiting for Match...</p>
+
+    </section>
+
+    <section class="card">
+
+        <h2>Live Event Console</h2>
+
+        <div id="eventConsole">
+
+        </div>
+
+    </section>
+
+    <section class="card controls">
+
+        <h2>Future Test Controls</h2>
+
+        <button disabled>Like</button>
+
+        <button disabled>Comment</button>
+
+        <button disabled>Gift</button>
+
+        <button disabled>Follow</button>
+
+    </section>
 
 </div>
 
-</main>
-
-<footer>
-
-Server Ready
-
-</footer>
-
 </div>
 
-<script src="js/websocket.js"></script>
-
+<script src="js/websocketClient.js"></script>
 <script src="admin.js"></script>
 
 </body>
