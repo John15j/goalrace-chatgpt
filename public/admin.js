@@ -1,6 +1,27 @@
 const eventConsole = document.getElementById("eventConsole");
 const clientCount = document.getElementById("clientCount");
+const connectionText = document.getElementById("connectionText");
+const connectionDot = document.getElementById("connectionDot");
 
+GoalRaceSocket.onOpen(() => {
+
+    connectionText.textContent = "Connected";
+
+    connectionDot.style.background = "#35d07f";
+
+    addEvent("WebSocket Connected");
+
+});
+
+GoalRaceSocket.onClose(() => {
+
+    connectionText.textContent = "Disconnected";
+
+    connectionDot.style.background = "#ff4d4d";
+
+    addEvent("WebSocket Disconnected");
+
+});
 function addEvent(text){
 
     const row = document.createElement("div");
