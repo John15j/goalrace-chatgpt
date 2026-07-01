@@ -44,39 +44,43 @@ module.exports = function (server, config, clients) {
             version: config.project.version
         }));
 
-        socket.on("message", raw => {
+       const eventQueue = [];
 
-            let message;
+setInterval(() => {
 
-            try {
+    if (eventQueue.length === 0) return;
 
-                message = JSON.parse(raw);
+    const event = eventQueue.shift();
 
-            } catch {
+    broadcast(event);
 
-                console.error("Invalid JSON received.");
+}, 40);
 
-                return;
+socket.on("message", raw => {
 
-            }
+    let message;
 
-            switch (message.type) {
+    try{
 
-                case "admin_test":
+        message = JSON.parse(raw);
 
-                    console.log("Admin Test:", message.event);
+    }catch{
 
-                    broadcast(message);
+        console.error("Invalid JSON");
 
-                    break;
+        return;
 
-                default:
+    }
 
-                    console.log("Unknown Message:", message.type);
+    if(message.type === "event"){
 
-            }
+        eventQueue.push(message);
 
-        });
+        console.log(`Queued: ${message.event}`);
+
+    }
+
+});
 
         socket.on("close", () => {
 

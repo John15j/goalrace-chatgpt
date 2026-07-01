@@ -1,23 +1,90 @@
 /*
-==========================================
+==================================================
 GOALRACE ENGINE
 Broadcast Bootstrap
-==========================================
+==================================================
 */
 
-GoalRaceSocket.onMessage(data => {
+const liveFeed = document.getElementById("liveFeed");
 
-    console.log("GAME EVENT",data);
+const connectionText = document.getElementById("connectionText");
+const connectionDot = document.getElementById("connectionDot");
 
-    if(data.version){
+/*
+==================================================
+Connection Status
+==================================================
+*/
 
-        const version=document.getElementById("version");
+GoalRaceSocket.onOpen(() => {
 
-        if(version){
+    connectionText.textContent = "Connected";
 
-            version.textContent="Version "+data.version;
+    connectionDot.style.background = "#35d07f";
+
+});
+
+GoalRaceSocket.onClose(() => {
+
+    connectionText.textContent = "Disconnected";
+
+    connectionDot.style.background = "#ff4d4d";
+
+});
+
+/*
+==================================================
+Incoming Events
+==================================================
+*/
+
+GoalRaceSocket.onMessage(message => {
+
+    console.log("GAME EVENT", message);
+
+    if (message.version) {
+
+        const version = document.getElementById("version");
+
+        if (version) {
+
+            version.textContent = "Version " + message.version;
 
         }
+
+    }
+
+    if (message.type !== "event") return;
+
+    switch (message.event) {
+
+        case "like":
+
+            liveFeed.textContent =
+                "👍 Someone liked the stream";
+
+            break;
+
+        case "comment":
+
+            liveFeed.textContent =
+                "💬 Someone commented";
+
+            break;
+
+        case "gift":
+
+            liveFeed.textContent =
+                "🎁 Someone sent a gift";
+
+            break;
+
+        case "follow":
+
+            liveFeed.textContent =
+                "➕ Someone followed";
+
+            break;
 
     }
 

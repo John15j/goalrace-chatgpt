@@ -2,7 +2,7 @@
  * ==========================================================
  * GOALRACE ENGINE
  * Configuration
- * Version: 0.1.0
+ * Version: 0.2.0
  * ==========================================================
  *
  * This file contains ONLY configuration values.
@@ -10,10 +10,11 @@
  */
 
 module.exports = {
+
     project: {
         name: "GOALRACE ENGINE",
-        version: "0.1.0",
-        stage: "Phase 1 - Foundation"
+        version: "0.2.0",
+        stage: "Phase 2 - Test Mode"
     },
 
     server: {
@@ -29,5 +30,41 @@ module.exports = {
     logging: {
         timestamps: true,
         colors: true
+    },
+
+    testMode: {
+
+        usernames: [
+            "JoseHN",
+            "MariaGT",
+            "Carlos504",
+            "AnaSV",
+            "LuisMEX",
+            "EmilyUSA",
+            "KevinCR",
+            "DanielPA"
+        ],
+
+        countries: [
+            "Honduras",
+            "Mexico",
+            "Guatemala",
+            "El Salvador",
+            "Nicaragua",
+            "Costa Rica",
+            "Panama",
+            "USA"
+        ],
+
+        gifts: [
+            "Rose",
+            "Donut",
+            "Perfume",
+            "Galaxy",
+            "Lion",
+            "Universe"
+        ]
+
     }
+
 };

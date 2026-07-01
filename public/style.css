@@ -298,16 +298,61 @@ border-bottom:1px solid rgba(255,255,255,.06);
 
 .controls button{
 
-margin:6px;
+    margin:6px;
 
-padding:12px 18px;
+    padding:12px 18px;
 
-border:none;
+    border:none;
 
-border-radius:8px;
+    border-radius:8px;
 
-cursor:not-allowed;
+    cursor:pointer;
 
-opacity:.55;
+    opacity:1;
+
+    background:#2d6cdf;
+
+    color:white;
+
+    font-weight:bold;
+
+    transition:.2s;
+
+}
+
+.controls button:hover{
+
+    background:#4c82e8;
+
+    transform:translateY(-2px);
+
+}
+
+.controls button:active{
+
+    transform:translateY(1px);
+
+}
+#liveFeed{
+
+    position:absolute;
+
+    top:140px;
+
+    right:25px;
+
+    width:300px;
+
+    padding:15px;
+
+    border-radius:10px;
+
+    background:rgba(15,20,30,.85);
+
+    color:white;
+
+    font-size:15px;
+
+    font-weight:bold;
 
 }

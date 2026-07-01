@@ -9,6 +9,7 @@ function addEvent(text){
         `[${new Date().toLocaleTimeString()}] ${text}`;
 
     eventConsole.prepend(row);
+    
 
 }
 
@@ -37,7 +38,55 @@ GoalRaceSocket.onMessage(message=>{
             addEvent(`TEST EVENT → ${message.event}`);
 
             break;
+            case "event":
+
+    addEvent(`EVENT → ${message.event}`);
+
+    break;
 
     }
 
 });
+const sendTestEvent = (eventName)=>{
+
+    GoalRaceSocket.send({
+
+        type:"event",
+
+        event:eventName,
+
+        source:"admin",
+
+        timestamp:Date.now(),
+
+        payload:{
+
+    username:"JoseHN",
+
+    country:"Honduras",
+
+    gift:"Rose",
+
+    likeCount:30
+
+}
+
+    });
+
+};
+
+document
+.getElementById("likeBtn")
+.onclick=()=>sendTestEvent("like");
+
+document
+.getElementById("commentBtn")
+.onclick=()=>sendTestEvent("comment");
+
+document
+.getElementById("giftBtn")
+.onclick=()=>sendTestEvent("gift");
+
+document
+.getElementById("followBtn")
+.onclick=()=>sendTestEvent("follow");
