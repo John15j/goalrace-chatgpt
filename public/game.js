@@ -56,36 +56,49 @@ GoalRaceSocket.onMessage(message => {
 
     if (message.type !== "event") return;
 
-    switch (message.event) {
+   const payload = message.payload || {};
 
-        case "like":
+switch (message.event) {
 
-            liveFeed.textContent =
-                "👍 Someone liked the stream";
+    case "like":
 
-            break;
+        liveFeed.innerHTML = `
+            ❤️ <strong>${payload.username}</strong><br>
+            👍 ${payload.likeCount} Likes
+        `;
 
-        case "comment":
+        break;
 
-            liveFeed.textContent =
-                "💬 Someone commented";
+    case "comment":
 
-            break;
+        liveFeed.innerHTML = `
+            💬 <strong>${payload.username}</strong><br>
+            ${payload.comment}<br>
+            🌎 ${payload.country}
+        `;
 
-        case "gift":
+        break;
 
-            liveFeed.textContent =
-                "🎁 Someone sent a gift";
+    case "gift":
 
-            break;
+        liveFeed.innerHTML = `
+            🎁 <strong>${payload.username}</strong><br>
+            Sent: ${payload.gift}<br>
+            🌎 ${payload.country}
+        `;
 
-        case "follow":
+        break;
 
-            liveFeed.textContent =
-                "➕ Someone followed";
+    case "follow":
 
-            break;
+        liveFeed.innerHTML = `
+            ➕ <strong>${payload.username}</strong><br>
+            New Follower<br>
+            🌎 ${payload.country}
+        `;
 
-    }
+        break;
+
+}
 
 });
