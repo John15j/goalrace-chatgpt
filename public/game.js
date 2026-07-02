@@ -27,21 +27,46 @@ const countryScores = {
 
 function updateScoreboard(){
 
-    document.querySelector("#score-honduras span").textContent = countryScores.Honduras;
+    const scoreboard = document.getElementById("scoreboard");
 
-    document.querySelector("#score-mexico span").textContent = countryScores.Mexico;
+    const rankings = Object.entries(countryScores)
+        .sort((a,b)=>b[1]-a[1]);
 
-    document.querySelector("#score-guatemala span").textContent = countryScores.Guatemala;
+    scoreboard.innerHTML = "";
 
-    document.querySelector("#score-elsalvador span").textContent = countryScores["El Salvador"];
+    rankings.forEach(([country,score],index)=>{
 
-    document.querySelector("#score-nicaragua span").textContent = countryScores.Nicaragua;
+        const row = document.createElement("div");
 
-    document.querySelector("#score-costarica span").textContent = countryScores["Costa Rica"];
+        row.className = "countryScore";
 
-    document.querySelector("#score-panama span").textContent = countryScores.Panama;
+        let medal = "";
 
-    document.querySelector("#score-usa span").textContent = countryScores.USA;
+        if(index===0) medal = "🥇";
+        else if(index===1) medal = "🥈";
+        else if(index===2) medal = "🥉";
+
+        const flags = {
+
+            Honduras:"🇭🇳",
+            Mexico:"🇲🇽",
+            Guatemala:"🇬🇹",
+            "El Salvador":"🇸🇻",
+            Nicaragua:"🇳🇮",
+            "Costa Rica":"🇨🇷",
+            Panama:"🇵🇦",
+            USA:"🇺🇸"
+
+        };
+
+        row.innerHTML = `
+            <div>${medal} ${flags[country]} ${country}</div>
+            <span>${score.toLocaleString()}</span>
+        `;
+
+        scoreboard.appendChild(row);
+
+    });
 
 }
 /*
@@ -168,3 +193,4 @@ switch (message.event) {
 }
 
 });
+updateScoreboard();
