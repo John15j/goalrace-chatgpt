@@ -14,9 +14,15 @@
 
 <body>
 
+<div id="broadcastViewport">
+
 <div id="broadcast">
 
-    <header>
+    <!-- ====================================== -->
+    <!-- HEADER -->
+    <!-- ====================================== -->
+
+    <header id="broadcastHeader">
 
         <div id="matchTimer">
             00:00
@@ -33,56 +39,107 @@
         </div>
 
         <div id="totalLikes">
-
             ❤️ 0
-
         </div>
 
     </header>
 
-    <main>
+    <!-- ====================================== -->
+    <!-- MAIN -->
+    <!-- ====================================== -->
 
-        <section id="stadiumPlaceholder">
+    <main id="broadcastMain">
 
-            <div class="placeholderText">
+        <!-- Stadium -->
+        <section id="stadiumLayer">
 
-                3D STADIUM
-                <br>
-                (Coming Phase 4)
+    
+<div id="stadiumBackground">
 
-            </div>
+    <div id="fieldArea"></div>
+
+    <div id="spawnTunnel"></div>
+
+    <div class="bench bench1"></div>
+    <div class="bench bench2"></div>
+    <div class="bench bench3"></div>
+    <div class="bench bench4"></div>
+    <div class="bench bench5"></div>
+    <div class="bench bench6"></div>
+    <div class="bench bench7"></div>
+    <div class="bench bench8"></div>
+
+</div>
+
+<div id="playerLayer"></div>
+
+<div id="effectsLayer"></div>
+
+<div id="stadiumPlaceholder">
 
         </section>
 
+        <!-- HUD -->
+
+        <aside id="hudLayer">
+
+            <div id="liveFeed">
+                test feed
+            </div>
+
+            <div id="eventHistory"></div>
+
+        </aside>
+
     </main>
 
-    <footer>
+    <!-- ====================================== -->
+    <!-- FOOTER -->
+    <!-- ====================================== -->
 
-<div id="scoreboard">
+    <footer id="broadcastFooter">
 
-    <div class="countryScore" id="score-honduras">🇭🇳 Honduras <span>0</span></div>
+        <div id="scoreboard">
 
-    <div class="countryScore" id="score-mexico">🇲🇽 Mexico <span>0</span></div>
+            <div class="countryScore" id="score-honduras">
+                🇭🇳 Honduras <span>0</span>
+            </div>
 
-    <div class="countryScore" id="score-guatemala">🇬🇹 Guatemala <span>0</span></div>
+            <div class="countryScore" id="score-mexico">
+                🇲🇽 Mexico <span>0</span>
+            </div>
 
-    <div class="countryScore" id="score-elsalvador">🇸🇻 El Salvador <span>0</span></div>
+            <div class="countryScore" id="score-guatemala">
+                🇬🇹 Guatemala <span>0</span>
+            </div>
 
-    <div class="countryScore" id="score-nicaragua">🇳🇮 Nicaragua <span>0</span></div>
+            <div class="countryScore" id="score-elsalvador">
+                🇸🇻 El Salvador <span>0</span>
+            </div>
 
-    <div class="countryScore" id="score-costarica">🇨🇷 Costa Rica <span>0</span></div>
+            <div class="countryScore" id="score-nicaragua">
+                🇳🇮 Nicaragua <span>0</span>
+            </div>
 
-    <div class="countryScore" id="score-panama">🇵🇦 Panama <span>0</span></div>
+            <div class="countryScore" id="score-costarica">
+                🇨🇷 Costa Rica <span>0</span>
+            </div>
 
-    <div class="countryScore" id="score-usa">🇺🇸 USA <span>0</span></div>
+            <div class="countryScore" id="score-panama">
+                🇵🇦 Panama <span>0</span>
+            </div>
 
-</div>
+            <div class="countryScore" id="score-usa">
+                🇺🇸 USA <span>0</span>
+            </div>
+
+        </div>
 
     </footer>
 
 </div>
-<div id="liveFeed">test feed</div>
 
+</div>
 
 <script src="js/websocketClient.js"></script>
 <script src="game.js"></script>

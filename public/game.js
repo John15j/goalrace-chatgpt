@@ -98,7 +98,26 @@ Incoming Events
 */
 
 GoalRaceSocket.onMessage(message => {
-if(payload.country && countryScores[payload.country] !== undefined){
+
+    console.log("GAME EVENT", message);
+
+    if (message.version) {
+
+        const version = document.getElementById("version");
+
+        if (version) {
+
+            version.textContent = "Version " + message.version;
+
+        }
+
+    }
+
+    if (message.type !== "event") return;
+
+    const payload = message.payload || {};
+
+    if(payload.country && countryScores[payload.country] !== undefined){
 
     switch(message.event){
 
@@ -131,23 +150,7 @@ if(payload.country && countryScores[payload.country] !== undefined){
     updateScoreboard();
 
 }
-    console.log("GAME EVENT", message);
-
-    if (message.version) {
-
-        const version = document.getElementById("version");
-
-        if (version) {
-
-            version.textContent = "Version " + message.version;
-
-        }
-
-    }
-
-    if (message.type !== "event") return;
-
-   const payload = message.payload || {};
+    
 
 switch (message.event) {
 
