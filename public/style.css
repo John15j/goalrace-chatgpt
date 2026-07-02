@@ -356,3 +356,52 @@ border-bottom:1px solid rgba(255,255,255,.06);
     font-weight:bold;
 
 }
+#scoreboard{
+
+    position:absolute;
+
+    left:25px;
+
+    top:120px;
+
+    width:300px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:8px;
+
+}
+
+.countryScore{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:10px 14px;
+
+    border-radius:10px;
+
+    background:rgba(0,0,0,.60);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    color:white;
+
+    font-weight:600;
+
+    backdrop-filter:blur(8px);
+
+}
+
+.countryScore span{
+
+    font-size:18px;
+
+    font-weight:700;
+
+}
