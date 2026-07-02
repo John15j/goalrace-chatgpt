@@ -68,6 +68,73 @@ GoalRaceSocket.onMessage(message=>{
     }
 
 });
+const TEST_DATA = {
+
+    usernames: [
+
+        "JoseHN",
+        "MariaGT",
+        "Carlos504",
+        "EmilyUSA",
+        "KevinCR",
+        "DanielPA",
+        "AnaSV",
+        "LuisMEX",
+        "AngelHN",
+        "SoccerFan22",
+        "TikTokPro",
+        "GoalKing",
+        "FootballGirl",
+        "Legend504",
+        "FastRunner"
+
+    ],
+
+    countries: [
+
+        "Honduras",
+        "Mexico",
+        "Guatemala",
+        "El Salvador",
+        "Nicaragua",
+        "Costa Rica",
+        "Panama",
+        "USA"
+
+    ],
+
+    comments: [
+
+        "HON",
+        "MEX",
+        "USA",
+        "GOAL!",
+        "🔥🔥🔥",
+        "LET'S GO!",
+        "COME ON!",
+        "⚽⚽⚽"
+
+    ],
+
+    gifts: [
+
+        "Rose",
+        "Donut",
+        "Perfume",
+        "Galaxy",
+        "Lion",
+        "Universe"
+
+    ]
+
+};
+
+function randomItem(array){
+
+    return array[Math.floor(Math.random()*array.length)];
+
+}
+
 const sendTestEvent = (eventName)=>{
 
     GoalRaceSocket.send({
@@ -82,15 +149,17 @@ const sendTestEvent = (eventName)=>{
 
         payload:{
 
-    username:"JoseHN",
+            username:randomItem(TEST_DATA.usernames),
 
-    country:"Honduras",
+            country:randomItem(TEST_DATA.countries),
 
-    gift:"Rose",
+            comment:randomItem(TEST_DATA.comments),
 
-    likeCount:30
+            gift:randomItem(TEST_DATA.gifts),
 
-}
+            likeCount:Math.floor(Math.random()*250)+1
+
+        }
 
     });
 

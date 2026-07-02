@@ -32,39 +32,76 @@ module.exports = {
         colors: true
     },
 
-    testMode: {
+   testMode: {
 
-        usernames: [
-            "JoseHN",
-            "MariaGT",
-            "Carlos504",
-            "AnaSV",
-            "LuisMEX",
-            "EmilyUSA",
-            "KevinCR",
-            "DanielPA"
-        ],
+    usernames: [
 
-        countries: [
-            "Honduras",
-            "Mexico",
-            "Guatemala",
-            "El Salvador",
-            "Nicaragua",
-            "Costa Rica",
-            "Panama",
-            "USA"
-        ],
+        "JoseHN",
+        "MariaGT",
+        "Carlos504",
+        "EmilyUSA",
+        "KevinCR",
+        "DanielPA",
+        "AnaSV",
+        "LuisMEX",
+        "AngelHN",
+        "SoccerFan22",
+        "TikTokPro",
+        "GoalKing",
+        "FootballGirl",
+        "Legend504",
+        "FastRunner"
 
-        gifts: [
-            "Rose",
-            "Donut",
-            "Perfume",
-            "Galaxy",
-            "Lion",
-            "Universe"
-        ]
+    ],
 
-    }
+    comments: [
+
+        "HON",
+        "MEX",
+        "USA",
+        "GO GO GO",
+        "LET'S GO",
+        "🔥🔥🔥",
+        "⚽⚽⚽",
+        "WIN",
+        "GOAL",
+        "COME ON",
+        "HONDURAS",
+        "MEXICO",
+        "GUATEMALA",
+        "EL SALVADOR",
+        "NICARAGUA",
+        "COSTA RICA",
+        "PANAMA"
+
+    ],
+
+    countries: [
+
+        "Honduras",
+        "Mexico",
+        "Guatemala",
+        "El Salvador",
+        "Nicaragua",
+        "Costa Rica",
+        "Panama",
+        "USA"
+
+    ],
+
+    gifts: [
+
+        "Rose",
+        "TikTok",
+        "Perfume",
+        "Donut",
+        "Heart Me",
+        "Galaxy",
+        "Lion",
+        "Universe"
+
+    ]
+
+}
 
 };
